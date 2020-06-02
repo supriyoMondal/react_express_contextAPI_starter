@@ -1,6 +1,6 @@
-## React Express Starter Pack with context API
+## React Express Starter Pack with Redux
 
-#### Use the full power of the context API with this starter pack.
+#### Use the full power of the Redux with this starter pack.
 
 ## Quick Start
 
