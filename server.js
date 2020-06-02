@@ -12,9 +12,16 @@ app.use(express.json());
 //DB connection
 connectDB();
 
-app.get('/', (req, res) => {
-    return res.send("Hello From Starter pack")
-})
+app.use('/api', require('./routes/user'))
+
+if (['production'].includes(process.env.NODE_ENV)) {
+    app.use(express.static('client/build'));
+
+    const path = require('path');
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve('client', 'build', 'index.html'));
+    });
+}
 
 const PORT = process.env.PORT || 5000;
 
