@@ -1,7 +1,10 @@
-import { TEST } from "./types";
+import { TEST } from "../actons/types";
 
+const initialState = {
+    test: "Initial State"
+}
 
-export default (state, action) => {
+export default (state = initialState, action) => {
     const { type, payload } = action;
     switch (type) {
         case TEST:
